@@ -1,19 +1,17 @@
 #include "ex3.h"
 
+#define SIZE 3
+
 int main_ex3() {
-    int var[3], somme = 0;
+    int var, somme = 0;
     float moyenne = 0;
-    printf("Saisissez un entier\n");
-    scanf("%d", &var[0]);
-    printf("Saisissez un entier\n");
-    scanf("%d", &var[1]);
-    printf("Saisissez un entier\n");
-    scanf("%d", &var[2]);
-    for (int i = 0; i < 3; i++) {
-        moyenne += var[i];
-        somme += var[i];
+    for (int i = 0; i < SIZE; i++) {
+        printf("Saisissez un entier\n");
+        scanf("%d", &var);
+        moyenne += var;
+        somme += var;
     }
-    moyenne /= 3;
+    moyenne /= SIZE;
     printf("\tSomme = %d\n\tMoyenne = %.1f", somme, moyenne);
     return 0;
 }
