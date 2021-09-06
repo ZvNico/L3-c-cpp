@@ -2,7 +2,7 @@
 
 #define SIZE 3
 
-int main_ex3() {
+int main_tp1_ex3() {
     int var, somme = 0;
     float moyenne = 0;
     for (int i = 0; i < SIZE; i++) {

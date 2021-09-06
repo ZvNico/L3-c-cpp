@@ -1,6 +1,6 @@
 #include "ex5.h"
 
-int main_ex5() {
+int main_tp1_ex5() {
     float rayon, hauteur;
     printf("Quelle est le rayon du cercle ? ");
     scanf("%f", &rayon);

@@ -1,6 +1,6 @@
 #include "ex6.h"
 
-int main_ex6() {
+int main_tp1_ex6() {
     char lettre;
     printf("Saisissez une minuscule: ");
     scanf("%c", &lettre);

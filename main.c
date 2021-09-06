@@ -1,7 +1,6 @@
-#include <stdio.h>
-#include "TP1/ex6/ex6.h"
+#include "TP2/ex1/ex1.h"
 
 int main() {
-    main_ex6();
+	main_tp2_ex1();
     return 0;
 }

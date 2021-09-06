@@ -1,6 +1,6 @@
 #include "ex1.h"
 
-int main_ex1() {
+int main_tp1_ex1() {
     float montant;
     float taux_de_change = 1.2f;
     printf("Entrez un montant en Euro:");

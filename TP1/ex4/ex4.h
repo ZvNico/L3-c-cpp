@@ -1,8 +1,8 @@
-#ifndef L3_EX4_H
-#define L3_EX4_H
+#ifndef L3_TP1_EX4_H
+#define L3_TP1_EX4_H
 
 #include "stdio.h"
 
-int main_ex4();
+int main_tp1_ex4();
 
-#endif //L3_EX4_H
+#endif //L3_TP1_EX4_H

@@ -1,6 +1,6 @@
 #include "ex2.h"
 
-int main_ex2() {
+int main_tp1_ex2() {
     int var1 = 123;
     int var2 = 18;
     var1 += var2;

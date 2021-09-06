@@ -1,6 +1,6 @@
 #include "ex4.h"
 
-int main_ex4() {
+int main_tp1_ex4() {
     float hauteur, largeur;
     printf("Saisissez une largeur:\n");
     scanf("%f", &largeur);
