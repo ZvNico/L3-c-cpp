@@ -9,8 +9,7 @@ int main_tp2_ex5() {
         if (proposition == pin) {
             valide = 1;
         } else {
-            tentative--;
-            printf("\tErreur, il vous reste %d tentatives.\n", tentative);
+            printf("\tErreur, il vous reste %d tentatives.\n", --tentative);
         }
     }
     if (tentative) {
