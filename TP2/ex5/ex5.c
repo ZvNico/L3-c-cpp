@@ -1,6 +1,7 @@
 #include "ex5.h"
 
 int main_tp2_ex5() {
+    srand(time(NULL));
     int tentative = 3, valide = 0, pin = rand() % 10000, proposition;
     printf("%d\n", pin);
     while (!valide && tentative) {
