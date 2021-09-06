@@ -1,4 +1,4 @@
-#include "ex12.h"
+﻿#include "ex12.h"
 
 int main_tp2_ex12() {
     char operateur;

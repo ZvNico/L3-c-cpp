@@ -1,3 +1,5 @@
+"""this script setup the project for doing next exercise,
+if you are on a new TP you need to create the TP folder"""
 import os
 
 
