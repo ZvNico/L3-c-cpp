@@ -1,6 +1,6 @@
-#include "TP3/ex6/ex6.h"
+#include "TP3/ex12/ex12.h"
 
 int main() {
-	main_tp3_ex6();
+	main_tp3_ex12();
     return 0;
 }
