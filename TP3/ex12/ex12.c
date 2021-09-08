@@ -9,20 +9,36 @@ typedef enum bool {
 
 int main_tp3_ex12() {
     bool maj;
-    char input[SIZE];
-    char chaine[] = "CODEUR";
+    int i;
+    char input[SIZE], chaine[] = "CODEUR", op = ' ';
     do {
         printf("Ecrire un mot en majuscule: ");
         fgets(input, sizeof(input), stdin);
+        for (i = 0; (i < SIZE) && (input[i]); ++i) {
+            if (input[i] == '\n') {
+                input[i] = '\0';
+            }
+        }
         maj = true;
-        for (int i = 0; (i < SIZE) && input[i]; ++i) {
+        for (i = 0; (i < SIZE) && input[i]; ++i) {
             if (((input[i] < 'A') || (input[i] > 'Z')) && (input[i] != '\n')) {
-                printf("Maj false : %c", input[i]);
                 maj = false;
                 break;
             }
         }
-    } while (maj != false);
-    printf("Valide");
+    } while (maj == false);
+    for (i = 0; (i < SIZE); ++i) {
+        if ((input[i] > chaine[i]) || (!chaine[i] && input[i])) {
+            op = '>';
+            break;
+        } else if ((input[i] < chaine[i]) || (!input[i] && chaine[i])) {
+            op = '<';
+            break;
+        } else if (!input[i] && !chaine[i]) {
+            op = '=';
+            break;
+        }
+    }
+    printf("%s %c %s", input, op, chaine);
     return 0;
 }

@@ -17,6 +17,11 @@ int main_tp3_ex10() {
         do {
             printf("Entrez un nouveau mot de passe: ");
             fgets(mdp, sizeof(mdp), stdin);
+            for (i = 0; (i < MAX) && (mdp[i]); ++i) {
+                if (mdp[i] == '\n') {
+                    mdp[i] = '\0';
+                }
+            }
             maj = false, spec = false, chiffre = false, taille = true;
             for (i = 0; (i < MAX) && mdp[i]; ++i) {
                 if ((mdp[i] >= 'A') && (mdp[i] <= 'Z')) {
