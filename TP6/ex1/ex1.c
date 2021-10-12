@@ -1,12 +1,31 @@
 #include "ex1.h"
 
+void free_dict(Dict **dict, int n) {
+    for (int i = 0; i < n; ++i) {
+        free(dict[i]->mot);
+    }
+    free(dict);
+}
+
+int max_dict(Dict **dict, int n) {
+    int max = 0;
+    for (int i = 0; i < n; ++i) {
+        if (dict[max]->occ < dict[i]->occ) {
+            max = i;
+        }
+    }
+    return max;
+}
 
 void sort_dict(Dict ***p_dict, int n) {
-    Dict *max = NULL;
-    int i, j;
-    for (i = 0; i < n; ++i) {
+    int i, j, m;
+    Dict *temp = NULL;
+    for (i = 1; i < n; ++i) {
         for (j = i; j < n; ++j) {
-
+            m = max_dict(*(p_dict) + i, n - i);
+            temp = *(p_dict[i]);
+            *p_dict[i] = *p_dict[m];
+            *p_dict[m] = temp;
         }
     }
 }
@@ -78,7 +97,7 @@ int find_occ(char *string, const char *find) {
 
 int main_tp6_ex1() {
     char texte[] = "Une personne m'a dit le mot bonjour. J'ai repondu bonjour a cette personne! Bonjour? Quel joli mot personne!";
-    Dict **dict = malloc(sizeof(Dict *) * strlen(texte));
+    Dict **dict = (Dict **) malloc(sizeof(Dict *) * strlen(texte));
     int i, pos = 0, len, pos_dict = 0, pos_word = 0, temp;
     for (i = 0; texte[i]; ++i) {
         texte[i] = (char) tolower(texte[i]);
@@ -89,7 +108,7 @@ int main_tp6_ex1() {
         }
         len = find_1st_non_word_char(texte + pos);
         if (len != -1) {
-            dict[pos_dict] = malloc(sizeof(dict));
+            dict[pos_dict] = (Dict *) malloc(sizeof(Dict));
             dict[pos_dict]->mot = (char *) malloc(sizeof(char) * len);
             dict[pos_dict]->occ = 1;
             for (i = 0; i < len; ++i) {
@@ -112,6 +131,10 @@ int main_tp6_ex1() {
         }
     } while (texte[pos]);
     print_dict(dict, pos_dict);
+    // le sort ne marche pas
+    //sort_dict(&dict, pos_dict);
+    //print_dict(dict, pos_dict);
+    free_dict(dict, pos_dict);
     return 0;
 }
 
